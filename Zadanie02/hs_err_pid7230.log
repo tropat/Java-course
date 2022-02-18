@@ -1,0 +1,96 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0x00007fdfc5c0aea1, pid=7230, tid=7241
+#
+# JRE version: OpenJDK Runtime Environment (11.0.12+7) (build 11.0.12+7-post-Debian-2deb10u1)
+# Java VM: OpenJDK 64-Bit Server VM (11.0.12+7-post-Debian-2deb10u1, mixed mode, sharing, tiered, compressed oops, serial gc, linux-amd64)
+# Problematic frame:
+# C  [libjimage.so+0x2ea1]
+#
+# No core dump will be written. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again
+#
+# If you would like to submit a bug report, please visit:
+#   https://bugs.debian.org/openjdk-11
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -agentlib:jdwp=transport=dt_socket,suspend=y,address=localhost:40181 -javaagent:/home/patrycja/4Programy/eclipse/eclipse/configuration/org.eclipse.osgi/217/0/.cp/lib/javaagent-shaded.jar -Dfile.encoding=UTF-8 Test
+
+Host: AMD Ryzen 5 3550H with Radeon Vega Mobile Gfx, 1 cores, 7G, Debian GNU/Linux 10 (buster)
+Time: Sun Oct 24 11:32:32 2021 CEST elapsed time: 103.676410 seconds (0d 0h 1m 43s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00007fdfc00c1800):  JavaThread "Signal Dispatcher" daemon [_thread_in_vm, id=7241, stack(0x00007fdfc437a000,0x00007fdfc447b000)]
+
+Stack: [0x00007fdfc437a000,0x00007fdfc447b000],  sp=0x00007fdfc4478220,  free space=1016k
+Native frames: (J=compiled Java code, A=aot compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [libjimage.so+0x2ea1]
+C  [libjimage.so+0x3a1a]
+C  [libjimage.so+0x3ee5]  JIMAGE_FindResource+0xd5
+V  [libjvm.so+0x5a80ff]
+V  [libjvm.so+0x5aa33b]
+V  [libjvm.so+0xd9d8bc]
+V  [libjvm.so+0xd9c4f2]
+V  [libjvm.so+0xd9e9f6]
+V  [libjvm.so+0x65218d]
+V  [libjvm.so+0x83a15a]
+j  jdk.internal.misc.Signal.dispatch(I)V+25 java.base@11.0.12
+v  ~StubRoutines::call_stub
+V  [libjvm.so+0x843221]
+V  [libjvm.so+0x842090]
+V  [libjvm.so+0xb810c1]
+V  [libjvm.so+0xdd3c00]
+V  [libjvm.so+0xdcfa99]
+V  [libjvm.so+0xb92ffe]
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  jdk.internal.misc.Signal.dispatch(I)V+25 java.base@11.0.12
+v  ~StubRoutines::call_stub
+
+siginfo: si_signo: 11 (SIGSEGV), si_code: 1 (SEGV_MAPERR), si_addr: 0x00007fdfb7871530
+
+Register to memory mapping:
+
+RAX=0x0000000000004945 is an unknown value
+RBX=0x00007fdfc44782d1 is pointing into the stack for thread: 0x00007fdfc00c1800
+RCX=0x00007fdfb785f01c is an unknown value
+RDX=0x0000000000004945 is an unknown value
+RSP=0x00007fdfc4478220 is pointing into the stack for thread: 0x00007fdfc00c1800
+RBP=0x00007fdfc4478240 is pointing into the stack for thread: 0x00007fdfc00c1800
+RSI=0x00007fdfc44782d0 is pointing into the stack for thread: 0x00007fdfc00c1800
+RDI=0x00007fdfc5c10030: <offset 0x0000000000008030> in /usr/lib/jvm/java-11-openjdk-amd64/lib/libjimage.so at 0x00007fdfc5c08000
+R8 =0x0 is NULL
+R9 =0x0000000076100fa4 is an unknown value
+R10=0x00007fdfc44782f3 is pointing into the stack for thread: 0x00007fdfc00c1800
+R11=0x00007fdfc7440f00: <offset 0x000000000017af00> in /lib/x86_64-linux-gnu/libc.so.6 at 0x00007fdfc72c6000
+R12=0x00007fdfc44782d0 is pointing into the stack for thread: 0x00007fdfc00c1800
+R13=0x000000000000844b is an unknown value
+R14=0x00007fdfc4479368 is pointing into the stack for thread: 0x00007fdfc00c1800
+R15=0x00007fdfc00c24e0 points into unknown readable memory: 0x65746e692f6b646a | 6a 64 6b 2f 69 6e 74 65
+
+
+Registers:
+RAX=0x0000000000004945, RBX=0x00007fdfc44782d1, RCX=0x00007fdfb785f01c, RDX=0x0000000000004945
+RSP=0x00007fdfc4478220, RBP=0x00007fdfc4478240, RSI=0x00007fdfc44782d0, RDI=0x00007fdfc5c10030
+R8 =0x0000000000000000, R9 =0x0000000076100fa4, R10=0x00007fdfc44782f3, R11=0x00007fdfc7440f00
+R12=0x00007fdfc44782d0, R13=0x000000000000844b, R14=0x00007fdfc4479368, R15=0x00007fdfc00c24e0
+RIP=0x00007fdfc5c0aea1, EFLAGS=0x0000000000010212, CSGSFS=0x002b000000000033, ERR=0x0000000000000004
+  TRAPNO=0x000000000000000e
+
+Top of Stack: (sp=0x00007fdfc4478220)
+0x00007fdfc4478220:   0000000000000000 00007fdfc0023e60
+0x00007fdfc4478230:   0000000000000000 00007fdfc44782d0
+0x00007fdfc4478240:   00007fdfc44782b0 00007fdfc5c0ba1a
+0x00007fdfc4478250:   0000000000000000 0000000000000000 
+
+Instructions: (pc=0x00007fdfc5c0aea1)
+0x00007fdfc5c0ada1:   48 89 df 48 89 4d 88 e8 83 f3 ff ff 48 8b 4d 88
+0x00007fdfc5c0adb1:   44 03 6d 90 e9 42 fd ff ff 66 0f 1f 44 00 00 8b
+0x00007fdfc5c0adc1:   08 41 89 0e 44 89 c1 8b 74 08 fc 41 89 74 0e fc
+0x00007fdfc5c0add1:   e9 d8 fe ff ff 66 2e 0f 1f 84 00 00 00 00 00 b9
+0x00007fdfc5c0ade1:   0a 00 00 00 e9 95 fd ff ff 44 89 c1 0f b7 74 08
+0x00007fdfc5c0adf1:   fe 66 41 89 74 0e fe e9 b1 fe ff ff 0f 1f 00 0f
+0x00007fdfc5c0ae01:   b6 17 89 f1 4c 8d 47 01 84 d2 74 1a 0f 
